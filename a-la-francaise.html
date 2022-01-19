@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/06b96e914c.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+
+    <title>OhMyFood</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <header>
+
+            <!-- Go Back Button -->
+            <a href="index.html">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+
+            <!-- Logo -->
+            <div class="logo">
+                <div>
+                    <img src="images/logo/ohmyfood.png" alt="OhMyFood Logo">
+                </div>
+            </div>
+
+        </header>
+
+        <section>
+
+            <!-- Principal Image -->
+            <div class="thumbnail">
+                <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg">
+            </div>
+
+            <!-- Cart Menu -->
+            <div class="menu">
+
+                <!-- Title Menu -->
+                <div class="menu__title">
+                    <h1>À la française</h1>
+
+                    <!-- Like Button -->
+                    <input class="like-fill-icon" type="checkbox" id="hc2" hidden />
+                    <label class="like-fill-icon" for="hc2">
+                        <i class="far fa-heart like-fill-icon"></i>
+                    </label>
+                </div>
+
+                <!-- Menu Body -->
+                <div class="menu__body">
+
+                    <!-- Section Entrées -->
+
+                    <div class="menu__body-section">
+
+                        <h2>Entrées</h2>
+
+                        <div class="menu-items">
+
+                            <ul>
+                                <!-- Menu Item -->
+                                <li class="menu-item">
+
+                                    <div class="menu-item__titre">
+                                        <h3>Tartare de poulpe acidulé</h3>
+                                        <p>Aux zestes d'orange</p>
+                                    </div>
+
+                                    <div class="menu-item__button">
+
+                                        <p>25€</p>
+
+                                        <div>
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                                <!-- Menu Item -->
+                                <li class="menu-item">
+
+                                    <div class="menu-item__titre">
+                                        <h3>Velouté de légumes d'antan</h3>
+                                        <p>Carotte, panais, topinambour</p>
+                                    </div>
+
+                                    <div class="menu-item__button">
+
+                                        <p>35€</p>
+
+                                        <div>
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                                <!-- Menu Item -->
+                                <li class="menu-item">
+
+                                    <div class="menu-item__titre">
+                                        <h3>Soupe à l'oignon</h3>
+                                        <p>Revisitée</p>
+                                    </div>
+
+                                    <div class="menu-item__button">
+
+                                        <p>20€</p>
+
+                                        <div>
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Section Plats -->
+
+                    <div class="menu__body-section">
+
+                        <h2>Plats</h2>
+
+                        <div class="menu-items">
+
+                            <ul>
+
+                                <!-- Menu Item -->
+                                <li class="menu-item">
+
+                                    <div class="menu-item__titre">
+                                        <h3>Coquilles Saint-Jacques</h3>
+                                        <p>Accompagnées d'une purée de panais</p>
+                                    </div>
+
+                                    <div class="menu-item__button">
+                                        <p>40€</p>
+
+                                        <div>
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                                <!-- Menu Item -->
+                                <li class="menu-item">
+
+                                    <div class="menu-item__titre">
+                                        <h3>Magret de canard</h3>
+                                        <p>Et parmentier de pommes de terre</p>
+                                    </div>
+
+                                    <div class="menu-item__button">
+
+                                        <p>35€</p>
+
+                                        <div>
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                                <!-- Menu Item -->
+                                <li class="menu-item">
+
+                                    <div class="menu-item__titre">
+                                        <h3>Pigeonneau d’Ille-et-Vilaine</h3>
+                                        <p>Sur son lit de gnocchis aux légumes</p>
+                                    </div>
+
+                                    <div class="menu-item__button">
+
+                                        <p>44€</p>
+
+                                        <div>
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Section Desserts -->
+                    <div class="menu__body-section">
+
+                        <h2>Desserts</h2>
+
+                        <div class="menu-items">
+
+                            <ul>
+
+                                <!-- Menu Item -->
+                                <li class="menu-item">
+
+                                    <div class="menu-item__titre">
+                                        <h3>Pétales de violettes glacés</h3>
+                                        <p>Et purée de noisettes</p>
+                                    </div>
+
+                                    <div class="menu-item__button">
+
+                                        <p>18€</p>
+
+                                        <div>
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                                <!-- Menu Item -->
+                                <li class="menu-item">
+
+                                    <div class="menu-item__titre">
+                                        <h3>Fondant au chocolat</h3>
+                                        <p>Revisité</p>
+                                    </div>
+
+                                    <div class="menu-item__button">
+
+                                        <p>22€</p>
+
+                                        <div>
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                                <!-- Menu Item -->
+                                <li class="menu-item">
+
+                                    <div class="menu-item__titre">
+                                        <h3>Millefeuille croustillant</h3>
+                                        <p>Myrtilles et pâte d’amande</p>
+                                    </div>
+
+                                    <div class="menu-item__button">
+
+                                        <p>23€</p>
+
+                                        <div>
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Comand Button -->
+                <div>
+                    <button class="active-button">Commander</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- footer -->
+
+        <footer>
+
+            <div class="footer-container">
+
+                <!-- Footer Logo -->
+                <div class="logo_text">
+
+                    <a href="index.html">
+                        <h3>ohmyfood</h3>
+                    </a>
+
+                </div>
+
+                <!-- Footer Navbar -->
+                <nav>
+
+                    <ul>
+
+                        <li>
+
+                            <a href="#">
+                                <i class="fas fa-utensils"></i>
+                                <span>Proposer un restaurant</span>
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#">
+                                <i class="fas fa-hands-helping"></i>
+                                <span>Devenir partenaire</span>
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a href="#">Mentions légales</a>
+                        </li>
+
+                        <li>
+                            <a href="mailto:contact@ohmyfood.com">Contact</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
