@@ -1,0 +1,154 @@
+/*   General Container Layout */
+
+.container {
+    background-color: $background-light;
+
+    &.home {
+        background: $background-light;
+    }
+}
+
+/* Header */
+
+header {
+    padding: 1em;
+    position: relative;
+    /* To show the boxshadow*/
+
+    @include box--shadow("header");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    &>a {
+        font-size: 1.5em;
+    }
+
+    .logo {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+
+        img {
+            object-fit: contain;
+            max-width: 161px;
+            width: 161px;
+        }
+    }
+}
+
+/* Header Animation Spinner */
+
+header.spinner {
+    display: flex;
+    padding: 1.5em;
+
+    .logo {
+        background: white;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 3;
+        animation: fullScreen 3s linear;
+    }
+
+    .logo div {
+        position: relative;
+        animation: image-grow 3s linear;
+    }
+
+    .logo div::before,
+    .logo div::after {
+        content: "";
+        position: absolute;
+        border: 12px solid transparent;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 50%;
+        opacity: 0;
+    }
+
+    .logo div::before {
+        top: -320%;
+        bottom: -320%;
+        left: -25%;
+        right: -25%;
+        border-top-color: $primary-color;
+        animation: rotateSpinner1 2500ms linear forwards;
+    }
+
+    .logo div::after {
+        top: -270%;
+        bottom: -270%;
+        left: -14%;
+        right: -14%;
+        border-top-color: $secondary-color;
+        animation: rotateSpinner2 2500ms linear forwards;
+    }
+}
+
+/* Introduction Layout */
+
+.presentation-card {
+    text-align: center;
+    background: $background-light;
+
+    @include mq(medium) {
+        height: 49vh;
+        background: url(/P3_07012022/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    @include mq(large) {
+        height: 67vh;
+    }
+
+    &>div {
+        padding: 2em;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @include mq(large) {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    h1 {
+        margin: 1em 1em 0em 1em;
+        font-weight: 900;
+
+        @include mq(medium) {
+            color: white;
+        }
+
+        @include mq(large) {
+            font-size: 3em;
+        }
+    }
+
+    p {
+        color: $font-secondary;
+
+        @include mq(medium) {
+            color: white;
+        }
+
+        @include mq(large) {
+            font-size: 1.5em;
+        }
+    }
+}

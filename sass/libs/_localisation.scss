@@ -1,0 +1,27 @@
+/* Form to add localisation function */
+
+.lcoalisation {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    background: $background-dark;
+
+    input {
+        padding: 1em;
+        border: none;
+        background: none;
+        font-weight: bold;
+        color: $font-secondary;
+        border: 2px solid transparent;
+        z-index: 999;
+    }
+
+    input:focus-visible,
+    input:focus,
+    input:hover {
+        border-bottom: 2px solid $tertiary-color;
+        outline: none;
+    }
+}

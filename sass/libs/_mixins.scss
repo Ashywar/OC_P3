@@ -1,0 +1,65 @@
+/***** FUNCTIONS ******/
+
+/* Return pastel color from a given HEX value color*/
+
+@function pastel($clr) {
+    $hue: hue($clr);
+    $sat: 100%;
+    $light: 96%;
+    $pastel: hsl($hue, $sat, $light);
+    @return $pastel;
+}
+
+/***** MIXINS *******/
+
+/* box shadow styles */
+
+@mixin box--shadow($style) {
+    @if ($style=="light") {
+        box-shadow: 3px 6px 8px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    @else if ($style=="header") {
+        box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    @else if ($style=="dark") {
+        box-shadow: 3px 6px 8px 0px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Break Points - The $breakpoints must be declared */
+
+@mixin mq($mq-breakpoint, $mq-breakpoints: $breakpoints) {
+    @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+        $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
+    }
+
+    @media screen and (min-width: #{$mq-breakpoint}) {
+        @content;
+    }
+}
+
+/* To give border-radius the 2 corners on 1 side */
+
+@mixin side-border-radius($side, $msr) {
+    @if($side=="right") {
+        border-top-right-radius: $msr;
+        border-bottom-right-radius: $msr;
+    }
+
+    @else if($side=="bottom") {
+        border-bottom-right-radius: $msr;
+        border-bottom-left-radius: $msr;
+    }
+
+    @else if($side=="left") {
+        border-top-left-radius: $msr;
+        border-bottom-left-radius: $msr;
+    }
+
+    @else {
+        border-top-left-radius: $msr;
+        border-top-right-radius: $msr;
+    }
+}
