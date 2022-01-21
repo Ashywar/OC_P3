@@ -1,4 +1,474 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/* Fonts */
+/* Colors */
+/* Breakpoints */
+/***** FUNCTIONS ******/
+/* Return pastel color from a given HEX value color*/
+/***** MIXINS *******/
+/* box shadow styles */
+/* Break Points - The $breakpoints must be declared */
+/* To give border-radius the 2 corners on 1 side */
+/* SPINNER ANIMATION */
+/* Change Logo Size for Spinner animation */
+@keyframes image-grow {
+  0%, 81% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Pink Spinner arc rotation*/
+@keyframes rotateSpinner1 {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    transform: rotate(2turn);
+  }
+  81% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+/* Violet Spinner arc rotation */
+@keyframes rotateSpinner2 {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    transform: rotate(3.5turn);
+  }
+  81% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+/* Change screen to 100vh and don't let scroll the page */
+@keyframes fullScreen {
+  0%, 80% {
+    min-height: 100vh;
+    position: fixed;
+  }
+  81% {
+    position: absolute;
+  }
+  100% {
+    position: absolute;
+    min-height: 0px;
+  }
+}
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Roboto";
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:active {
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+/* Do not see the color select text form buttons */
+button::selection,
+a::selection,
+img::selection {
+  background: transparent;
+}
+
+button::-moz-selection,
+a::selection,
+img::selection {
+  background: transparent;
+}
+
+/* Button Styles Gradient and Hover Lighten */
+.active-button {
+  padding: 1em;
+  border-radius: 2em;
+  background: linear-gradient(350deg, #9356DC, #FF79DA 90%);
+  color: white;
+  border: none;
+  margin: 1em;
+  box-shadow: 3px 6px 8px 0px rgba(0, 0, 0, 0.15);
+  transition: all 300ms ease-in-out;
+}
+@media screen and (min-width: 1024px) {
+  .active-button {
+    font-size: 1.5em;
+  }
+}
+.active-button:hover {
+  box-shadow: 3px 6px 8px 0px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+/*   General Container Layout */
+.container {
+  background-color: #f6f6f6;
+}
+.container.home {
+  background: #f6f6f6;
+}
+
+/* Header */
+header {
+  padding: 1em;
+  position: relative;
+  /* To show the boxshadow*/
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+header > a {
+  font-size: 1.5em;
+}
+header .logo {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+header .logo img {
+  object-fit: contain;
+  max-width: 161px;
+  width: 161px;
+}
+
+/* Header Animation Spinner */
+header.spinner {
+  display: flex;
+  padding: 1.5em;
+}
+header.spinner .logo {
+  background: white;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 3;
+  animation: fullScreen 3s linear;
+}
+header.spinner .logo div {
+  position: relative;
+  animation: image-grow 3s linear;
+}
+header.spinner .logo div::before,
+header.spinner .logo div::after {
+  content: "";
+  position: absolute;
+  border: 12px solid transparent;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 50%;
+  opacity: 0;
+}
+header.spinner .logo div::before {
+  top: -320%;
+  bottom: -320%;
+  left: -25%;
+  right: -25%;
+  border-top-color: #9356DC;
+  animation: rotateSpinner1 2500ms linear forwards;
+}
+header.spinner .logo div::after {
+  top: -270%;
+  bottom: -270%;
+  left: -14%;
+  right: -14%;
+  border-top-color: #FF79DA;
+  animation: rotateSpinner2 2500ms linear forwards;
+}
+
+/* Introduction Layout */
+.presentation-card {
+  text-align: center;
+  background: #f6f6f6;
+}
+@media screen and (min-width: 768px) {
+  .presentation-card {
+    height: 49vh;
+    background: url(/P3_07012022/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .presentation-card {
+    height: 67vh;
+  }
+}
+.presentation-card > div {
+  padding: 2em;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  .presentation-card > div {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+.presentation-card h1 {
+  margin: 1em 1em 0em 1em;
+  font-weight: 900;
+}
+@media screen and (min-width: 768px) {
+  .presentation-card h1 {
+    color: white;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .presentation-card h1 {
+    font-size: 3em;
+  }
+}
+.presentation-card p {
+  color: #575757;
+}
+@media screen and (min-width: 768px) {
+  .presentation-card p {
+    color: white;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .presentation-card p {
+    font-size: 1.5em;
+  }
+}
+
+/* Form to add localisation function */
+.lcoalisation {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  background: #EAEAEA;
+}
+.lcoalisation input {
+  padding: 1em;
+  border: none;
+  background: none;
+  font-weight: bold;
+  color: #575757;
+  border: 2px solid transparent;
+  z-index: 999;
+}
+.lcoalisation input:focus-visible,
+.lcoalisation input:focus,
+.lcoalisation input:hover {
+  border-bottom: 2px solid #99E2D0;
+  outline: none;
+}
+
+/* Instruction Component */
+.guide-card {
+  padding: 1em;
+  margin: 1em auto;
+  background-color: white;
+}
+@media screen and (min-width: 768px) {
+  .guide-card {
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .guide-card {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .guide-card h2 {
+    text-align: center;
+  }
+}
+.guide-card ul {
+  padding-left: 0;
+  margin: 2em auto;
+}
+@media screen and (min-width: 768px) {
+  .guide-card ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .guide-card ul li {
+    margin: 1em;
+  }
+}
+.guide-card__instruction {
+  display: flex;
+  justify-content: center;
+  margin: 1.5em auto;
+}
+.guide-card__instruction > span {
+  padding: 4px 8px;
+  background: #9356DC;
+  border-radius: 50%;
+  align-self: center;
+  font-size: small;
+  color: white;
+  margin-right: -10px;
+  z-index: 2;
+}
+.guide-card__instruction div {
+  padding: 1em;
+  border-radius: 1.5em;
+  background: #f6f6f6;
+  box-shadow: 0px 3px 9px 0px rgba(126, 126, 126, 0.3);
+  width: 95%;
+  font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .guide-card__instruction div {
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
+}
+.guide-card__instruction div > * {
+  padding: 0.5em;
+}
+.guide-card__instruction div i {
+  color: #7e7e7e;
+}
+.guide-card__instruction:hover div {
+  background-color: #f4ebff;
+}
+.guide-card__instruction:hover div i {
+  color: #9356DC;
+}
+
+/* Restaurant List Element */
+.restaurant-list {
+  background-color: #f6f6f6;
+  padding: 2em 1em 3em 1em;
+  max-width: 1024px;
+  margin: auto;
+}
+@media screen and (min-width: 768px) {
+  .restaurant-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (min-width: 768px) {
+  .restaurant-list h2 {
+    width: 100%;
+  }
+}
+
+/* Restaurant Card Element */
+.restaurant-card {
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 3px 6px 8px 0px rgba(0, 0, 0, 0.15);
+  margin: 1em auto;
+}
+.restaurant-card:hover {
+  box-shadow: 3px 6px 8px 0px rgba(0, 0, 0, 0.3);
+}
+@media screen and (min-width: 768px) {
+  .restaurant-card {
+    width: 44%;
+    margin: 3%;
+  }
+}
+.restaurant-card--new .restaurant-card__image::after {
+  content: "Nouveau";
+  background: #99E2D0;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  top: 1em;
+  right: 1em;
+  position: absolute;
+  color: #008766;
+  font-weight: bold;
+  font-size: small;
+}
+.restaurant-card__image {
+  position: relative;
+}
+.restaurant-card__image img {
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  height: 200px;
+  object-fit: cover;
+}
+.restaurant-card__description {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+.restaurant-card__description i {
+  font-size: 1.5em;
+  align-self: center;
+}
+.restaurant-card__description h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+.restaurant-card__description p {
+  margin: 0.25em auto;
+}
+
 .logo_text {
   font-family: "Shrikhand", cursive;
 }

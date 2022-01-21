@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+@import "./libs/variables";
+@import "./libs/mixins";
+@import "./libs/animations";
+@import "./libs/general";
+@import "./libs/active_button";
+@import "./libs/layout";
+@import "./libs/localisation";
+@import "./libs/instruction_guide_card";
+@import "./libs/restaurants-list";
 
 .logo_text {
     font-family: 'Shrikhand', cursive;
 }
+
+////////////////////////////////////////////////
