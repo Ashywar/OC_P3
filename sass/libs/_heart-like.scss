@@ -1,0 +1,48 @@
+/* Like Button Heart */
+
+label.like-fill-icon {
+    padding: 0.5em;
+    display: inline-block;
+    align-self: center;
+
+    &:hover i {
+        color: $secondary-color;
+    }
+
+    i {
+        font-weight: 400;
+        color: rgb(126, 126, 126);
+        position: relative;
+    }
+
+    &>i::after {
+        content: "\f004";
+        position: absolute;
+        right: 0;
+        top: 0px;
+        background-image: linear-gradient(330deg, $primary-color, $secondary-color 75%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        /* apply background only to text */
+        -webkit-text-fill-color: transparent;
+        /*transparent color only on text - Allow to see background */
+        -moz-text-fill-color: transparent;
+        font-weight: 900;
+        transform: scale(0);
+        transform-origin: bottom;
+        transition: transform 300ms ease-in;
+    }
+}
+
+input.like-fill-icon:checked+label.like-fill-icon {
+
+    &>i {
+        color: $secondary-color;
+    }
+
+    &>i::after {
+        transform: scale(1);
+    }
+
+}

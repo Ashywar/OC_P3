@@ -12,6 +12,30 @@
 
 /***** MIXINS *******/
 
+/* To give border-radius the 2 corners on 1 side */
+
+@mixin side-border-radius($side, $msr) {
+    @if($side=="right") {
+        border-top-right-radius: $msr;
+        border-bottom-right-radius: $msr;
+    }
+
+    @else if($side=="bottom") {
+        border-bottom-right-radius: $msr;
+        border-bottom-left-radius: $msr;
+    }
+
+    @else if($side=="left") {
+        border-top-left-radius: $msr;
+        border-bottom-left-radius: $msr;
+    }
+
+    @else {
+        border-top-left-radius: $msr;
+        border-top-right-radius: $msr;
+    }
+}
+
 /* box shadow styles */
 
 @mixin box--shadow($style) {
@@ -37,29 +61,5 @@
 
     @media screen and (min-width: #{$mq-breakpoint}) {
         @content;
-    }
-}
-
-/* To give border-radius the 2 corners on 1 side */
-
-@mixin side-border-radius($side, $msr) {
-    @if($side=="right") {
-        border-top-right-radius: $msr;
-        border-bottom-right-radius: $msr;
-    }
-
-    @else if($side=="bottom") {
-        border-bottom-right-radius: $msr;
-        border-bottom-left-radius: $msr;
-    }
-
-    @else if($side=="left") {
-        border-top-left-radius: $msr;
-        border-bottom-left-radius: $msr;
-    }
-
-    @else {
-        border-top-left-radius: $msr;
-        border-top-right-radius: $msr;
     }
 }
